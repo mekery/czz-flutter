@@ -156,7 +156,7 @@ class Address {
     if (includePrefix) {
       switch (decoded["version"]) {
         case Network.bchPublic:
-          prefix = "bitcoincash";
+          prefix = "classzz";
           break;
         case Network.bchTestnetPublic:
           prefix = "bchtest";
@@ -212,7 +212,8 @@ class Address {
   /// [hash] is the address hash, which can be decode either using [_decodeCashAddress()] or [_decodeLegacyAddress()]
   static _encode(String prefix, String type, Uint8List hash) {
     final prefixData = _prefixToUint5List(prefix) + Uint8List(1);
-    final versionByte = _getHashSizeBits(hash);
+    // final versionByte = _getHashSizeBits(hash);
+    final versionByte = 192;
     final payloadData =
         _convertBits(Uint8List.fromList([versionByte] + hash), 8, 5);
     final checksumData = prefixData + payloadData + Uint8List(8);

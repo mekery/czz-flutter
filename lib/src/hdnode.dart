@@ -52,9 +52,7 @@ class HDNode {
   HDNode(this._keyPair, this._chainCode);
 
   /// Creates an HDNode from [seed]. If [testnet] is not defined, mainnet is used
-  factory HDNode.fromSeed(Uint8List seed, [bool testnet = false]) {
-    final network = testnet ? Network.bitcoinCashTest() : Network.bitcoinCash();
-
+  factory HDNode.fromSeed(Uint8List seed, network) {
     final key = utf8.encode('Bitcoin seed');
 
     final I = hmacSHA512(key, seed);
@@ -206,7 +204,8 @@ class HDNode {
   String toLegacyAddress() => _keyPair.address;
 
   /// Returns HDNode's address in cashAddr format
-  String toCashAddress() => Address.toCashAddress(toLegacyAddress());
+  String toCashAddress({bool includePrefix = true}) =>
+      Address.toCashAddress(toLegacyAddress(), includePrefix);
 
   HDNode _deriveHardened(int index) {
     return derive(index + HIGHEST_BIT);
