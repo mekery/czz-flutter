@@ -1,5 +1,5 @@
 import 'dart:typed_data';
-import 'package:bitbox/src/utils/rest_api.dart';
+import 'package:czz/src/utils/rest_api.dart';
 import 'package:hex/hex.dart';
 import 'utils/p2pkh.dart' show P2PKH, P2PKHData;
 import 'crypto/crypto.dart' as bcrypto;
@@ -34,7 +34,7 @@ class Transaction {
   List<Output> outputs;
 
   /// If [inputs] or [outputs] are not defined, empty lists are created for each
-  Transaction([version = 2, locktime = 0, ins, outs]) :
+  Transaction([version = 1, locktime = 0, ins, outs]) :
       version = version,
       locktime = locktime,
       inputs = ins ?? <Input>[],

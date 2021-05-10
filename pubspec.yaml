@@ -1,4 +1,4 @@
-name: bitbox
+name: czz
 description: "BITBOX SDK lite for Flutter: build native cross-platform mobile apps with Bitcoin Cash"
 version: 0.0.5
 homepage: https://github.com/tomasforgacbch/bitbox-flutter

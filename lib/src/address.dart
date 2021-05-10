@@ -345,7 +345,7 @@ class Address {
       address = pieces.last;
     } else if (pieces.length == 1) {
       // if it came without separator, try all three possible formats
-      prefixes = <String>["bitcoincash", "bchtest", "bchreg"];
+      prefixes = <String>["classzz", "bchtest", "bchreg"];
     } else {
       // if it came with more than one separator, throw a format exception
       throw FormatException("Invalid Address Format: $address");

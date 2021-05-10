@@ -1,4 +1,4 @@
-import 'package:bitbox/bitbox.dart';
+import 'package:czz/bitbox.dart';
 
 class Bip21 {
 

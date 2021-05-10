@@ -1,4 +1,4 @@
-library bitbox;
+library czz;
 
 export 'src/account.dart';
 export 'src/address.dart';
