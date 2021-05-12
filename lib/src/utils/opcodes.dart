@@ -114,6 +114,7 @@ class Opcodes {
   static const OP_NOP8 = 183;
   static const OP_NOP9 = 184;
   static const OP_NOP10 = 185;
+  static const OP_NOP198 = 198;
   static const OP_PUBKEYHASH = 253;
   static const OP_PUBKEY = 254;
   static const OP_INVALIDOPCODE = 255;
