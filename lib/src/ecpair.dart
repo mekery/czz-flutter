@@ -3,7 +3,7 @@ import 'dart:math';
 import 'package:bip32/src/utils/ecurve.dart' as ecc;
 import 'package:bip32/src/utils/wif.dart' as wif;
 import 'package:czz/bitbox.dart';
-import 'package:pointycastle/ecc/api.dart';
+import 'package:pc_flutter/ecc/api.dart';
 
 import 'address.dart';
 import 'crypto/crypto.dart';
@@ -104,7 +104,8 @@ class ECPair {
     if (!ecc.isScalar(hash)) throw new ArgumentError(ecc.THROW_BAD_HASH);
     if (!ecc.isPrivate(x)) throw new ArgumentError(ecc.THROW_BAD_PRIVATE);
     
-    ECSignature sig = ecc.deterministicGenerateK(hash, x);
+    final sig0 = ecc.deterministicGenerateK(hash, x);
+    ECSignature sig = ECSignature(sig0.r, sig0.s);
 
     return sig;
   }

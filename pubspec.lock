@@ -144,6 +144,15 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.8.0"
+  pc_flutter:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: HEAD
+      resolved-ref: "618ea8d27bc0b35d430ef6fc14ece9baaa09beeb"
+      url: "https://github.com/mekery/pc_flutter"
+    source: git
+    version: "1.0.2"
   pedantic:
     dependency: transitive
     description:
@@ -152,7 +161,7 @@ packages:
     source: hosted
     version: "1.11.0"
   pointycastle:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: pointycastle
       url: "https://pub.flutter-io.cn"

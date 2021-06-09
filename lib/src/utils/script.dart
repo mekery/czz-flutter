@@ -1,12 +1,12 @@
 import 'dart:typed_data';
-import 'package:pointycastle/ecc/api.dart';
-import 'package:pointycastle/ecc/curves/secp256k1.dart';
+import 'package:pc_flutter/ecc/api.dart';
+import 'package:pc_flutter/ecc/curves/secp256k1.dart';
 
 import '../crypto/ecurve.dart';
 import '../utils/opcodes.dart';
 import 'pushdata.dart' as pushData;
 import 'check_types.dart';
-import 'package:pointycastle/src/utils.dart';
+import 'package:pc_flutter/src/utils.dart';
 //import 'check_types.dart';
 //Map<int, String> REVERSE_OPS = opcodes.map((String string, int number) => new MapEntry(number, string));
 const OP_INT_BASE = Opcodes.OP_RESERVED;

@@ -1,8 +1,8 @@
 import 'dart:typed_data';
 import 'package:hex/hex.dart';
-import 'package:pointycastle/ecc/api.dart' show ECPoint;
-import 'package:pointycastle/ecc/curves/secp256k1.dart';
-import "package:pointycastle/src/utils.dart";
+import 'package:pc_flutter/ecc/api.dart' show ECPoint;
+import 'package:pc_flutter/ecc/curves/secp256k1.dart';
+import "package:pc_flutter/src/utils.dart";
 
 class ECurve {
   static final secp256k1 = new ECCurve_secp256k1();
