@@ -9,7 +9,7 @@ class RestApi {
   }
 
   static Future<dynamic> sendGetRequest(String path, [String parameter = ""]) async {
-    final response = await http.get("$_restUrl$path/$parameter");
+    final response = await http.get(Uri.parse("$_restUrl$path/$parameter"));
 
     if (response.statusCode == 200) {
       return jsonDecode(response.body);
@@ -20,7 +20,7 @@ class RestApi {
 
   static sendPostRequest(String path, String postKey, List<String> data, {String returnKey}) async {
     final response = await http.post(
-      "$_restUrl$path",
+      Uri.parse("$_restUrl$path"),
       headers: {"content-type": "application/json"},
       body: jsonEncode({postKey : data}),
     );

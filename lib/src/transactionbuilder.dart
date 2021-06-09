@@ -1,7 +1,7 @@
 import 'dart:typed_data';
 import 'package:hex/hex.dart';
 import 'package:bs58check/bs58check.dart' as bs58check;
-import 'package:rlp/rlp.dart' as RLP;
+// import 'package:rlp/rlp.dart' as RLP;
 import 'address.dart';
 import 'crypto/crypto.dart';
 import 'utils/network.dart';
@@ -143,17 +143,17 @@ class TransactionBuilder {
     return _tx.addOutput(scriptPubKey, value);
   }
 
-  int addCastingOutput0(int convertType, String address, BigInt amount) {
-    final ctBytes = RLP.Rlp.encode([convertType, [], amount]);
-    final ctScript = bscript.compile([
-      Opcodes.OP_RETURN,
-      Opcodes.OP_NOP198,
-      Opcodes.OP_5,
-      Uint8List.fromList(ctBytes)
-    ]);
-
-    return _tx.addOutput(ctScript, 0);
-  }
+  // int addCastingOutput0(int convertType, String address, BigInt amount) {
+  //   final ctBytes = RLP.Rlp.encode([convertType, [], amount]);
+  //   final ctScript = bscript.compile([
+  //     Opcodes.OP_RETURN,
+  //     Opcodes.OP_NOP198,
+  //     Opcodes.OP_5,
+  //     Uint8List.fromList(ctBytes)
+  //   ]);
+  //
+  //   return _tx.addOutput(ctScript, 0);
+  // }
 
   int addCastingOutput(String castingAsm) {
     List<String> splits = castingAsm.split(' ');
